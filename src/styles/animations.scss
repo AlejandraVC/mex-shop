@@ -18,9 +18,9 @@
     z-index: -1;
   }
 }
-.ww-content-placeholder {
-  @apply bg-gray-medium;
-  @apply text-gray-medium;
+.content-placeholder {
+  @apply bg-gray-800;
+  @apply text-gray-800;
   @apply overflow-hidden;
   @apply relative;
   z-index: 1;
@@ -32,7 +32,12 @@
     @apply w-full;
     content: '';
     animation: moveLeftToRight 1s cubic-bezier(0.45, 0, 0.55, 1) infinite;
-    background: linear-gradient(to right, currentColor, theme('colors.gray.light'), currentColor);
+    background: linear-gradient(
+      to right,
+      currentColor,
+      theme('colors.gray.800'),
+      currentColor
+    );
   }
 }
 
@@ -51,17 +56,17 @@
 //
 // Usage:
 // ```
-//   <span class="opacity-75 hover:opacity-100 transition-opacity ww-transition-highlight">Menu item</span>
+//   <span class="opacity-75 hover:opacity-100 transition-opacity transition-highlight">Menu item</span>
 // ```
 //////////////////////////////
-.ww-transition-highlight,
-.ww-transition-reveal {
-  @apply ease-dynamic;
+.transition-highlight,
+.transition-reveal {
+  @apply ease-out;
 }
-.ww-transition-highlight {
+.transition-highlight {
   @apply duration-100;
 }
-.ww-transition-reveal {
+.transition-reveal {
   @apply duration-200;
 }
 

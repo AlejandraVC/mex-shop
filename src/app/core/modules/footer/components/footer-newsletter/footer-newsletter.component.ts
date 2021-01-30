@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-footer-newsletter',
+  selector: 'ms-footer-newsletter',
   templateUrl: './footer-newsletter.component.html',
-  styleUrls: ['./footer-newsletter.component.scss']
+  styleUrls: ['./footer-newsletter.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterNewsletterComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

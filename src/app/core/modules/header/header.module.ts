@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
-import { HeaderNavigationComponent } from './header-navigation/header-navigation.component';
-import { HeaderUserAccountComponent } from './header-user-account/header-user-account.component';
-import { HeaderLanguageSelectionComponent } from './header-language-selection/header-language-selection.component';
+import { HeaderComponent } from './components/header/header.component';
+import { HeaderNavigationComponent } from './components/header-navigation/header-navigation.component';
+import { HeaderUserAccountComponent } from './components/header-user-account/header-user-account.component';
+import { HeaderLanguageSelectionComponent } from './components/header-language-selection/header-language-selection.component';
 
 @NgModule({
   declarations: [

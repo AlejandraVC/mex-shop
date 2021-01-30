@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-footer-help',
+  selector: 'ms-footer-help',
   templateUrl: './footer-help.component.html',
-  styleUrls: ['./footer-help.component.scss']
+  styleUrls: ['./footer-help.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterHelpComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

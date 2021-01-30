@@ -5,11 +5,6 @@ module.exports = {
     extend: {
       colors: {
         alert: '#f3173a',
-        gray: {
-          light: '#f6f6f6',
-          medium: '#d2d2d2',
-          dark: '#858585',
-        },
         primary: {
           default: '#14b6e6',
           dark: '#119bc4',
@@ -24,8 +19,11 @@ module.exports = {
           light: '#4f4f4f',
         },
       },
-      transitionTimingFunction: {
-        'dynamic': 'cubic-bezier(0, 0.5, 0, 1)',
+      fontFamily:{
+        'roboto': ['Roboto', 'sans-serif']
+      },
+      fontSize: {
+        '2xs': '0.625rem', // 10px
       },
     },
   },
