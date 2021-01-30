@@ -1,0 +1,10 @@
+/* purgecss start ignore */
+
+// *Note:* (Almost) all available elements are set to `inherit` the font-family.
+// So assigning it to the `body` already covers most of the cases.
+body {
+  @apply font-roboto; // Tailwind fallback list of sans-serif system fonts
+  @apply text-gray-700;
+}
+
+/* purgecss end ignore */

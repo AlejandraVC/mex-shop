@@ -1,0 +1,36 @@
+<header class="w-full flex flex-col cursor-default">
+  <!-- Meta Navigation -->
+  <nav class="bg-gray-800 text-white">
+    <div class="max-w-7xl mx-auto flex items-center px-2 sm:px-6 lg:px-8 py-2">
+      <div class="w-1/2">
+        <img
+          class="block lg:hidden h-8 w-auto"
+          src="../assets/ms-logo.png"
+          alt="MexShop"
+          title="MexShop"
+        />
+
+        <ms-header-language-selection></ms-header-language-selection>
+      </div>
+      <div class="w-1/2">
+        <ms-header-user-account></ms-header-user-account>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Logo -->
+  <div class="hidden lg:flex w-full py-3 items-center justify-center mx-auto">
+    <a routerLink="/" class="flex items-center cursor-pointer">
+      <img
+        src="../assets/ms-logo.png"
+        class="h-10 pr-2"
+        loading="lazy"
+        alt="MexShop"
+        title="MexShop"
+      />
+      <span class="text-2xl">MexShop</span>
+    </a>
+  </div>
+  <!-- Main Navigation goes here -->
+  <ms-header-navigation></ms-header-navigation>
+</header>
