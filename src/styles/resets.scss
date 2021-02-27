@@ -100,7 +100,7 @@ video {
   overflow-wrap: break-word; // Prevent text from exceeding element boundaries
   padding: 0;
   text-rendering: optimizeLegibility;
-  user-select: none; // Stabilizes visual experience by preventing constantly changing cursor
+  /*  user-select: none; // Stabilizes visual experience by preventing constantly changing cursor */
   vertical-align: baseline;
 }
 

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component';
 import { FooterHelpComponent } from './components/footer-help/footer-help.component';
 import { FooterNewsletterComponent } from './components/footer-newsletter/footer-newsletter.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,7 @@ import { FooterNewsletterComponent } from './components/footer-newsletter/footer
     FooterHelpComponent,
     FooterNewsletterComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   exports: [FooterComponent],
 })
 export class FooterModule {}

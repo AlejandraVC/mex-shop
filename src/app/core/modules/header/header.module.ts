@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HeaderNavigationComponent } from './components/header-navigation/header-navigation.component';
 import { HeaderUserAccountComponent } from './components/header-user-account/header-user-account.component';
 import { HeaderLanguageSelectionComponent } from './components/header-language-selection/header-language-selection.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import { HeaderLanguageSelectionComponent } from './components/header-language-s
     HeaderUserAccountComponent,
     HeaderLanguageSelectionComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   exports: [HeaderComponent],
 })
 export class HeaderModule {}

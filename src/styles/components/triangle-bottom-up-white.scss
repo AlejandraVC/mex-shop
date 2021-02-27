@@ -1,0 +1,28 @@
+/* purgecss start ignore */
+
+// Creates a white, upwards pointing triangle at the bottom of the element it's applied to
+.triangle-bottom-up-white {
+  &::after {
+    content: '';
+    @apply absolute;
+    @apply block;
+    @apply border-transparent;
+    @apply border-solid;
+    @apply border-10;
+    @apply bottom-0;
+    @apply h-0;
+    @apply w-0;
+    @apply text-white;
+    @apply opacity-100;
+    @apply z-20;
+    border-bottom-color: currentColor;
+    left: calc(50% - 10px);
+  }
+  &.after-outside {
+    &::after {
+      bottom: -18px;
+    }
+  }
+}
+
+/* purgecss end ignore */
