@@ -4,13 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4223",
-    "twbuild": "ng build --prod --aot",
-    "build": "postcss src/tailwind.css -o public/tailwind.css",
+    "build": "ng build --prod --aot",
+    "build:prod": "NODE_ENV=production ng build --prod --aot",
+    "build:stats": "ng build --stats-json",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "stats": "webpack-bundle-analyzer dist/mex-shop/stats.json",
-    "production": "cross-env NODE_ENV=production postcss assets/css/src/tailwind.css -o assets/css/dist/tailwind.min.css"
+    "stats": "webpack-bundle-analyzer dist/mex-shop/stats.json"
   },
   "private": true,
   "dependencies": {
