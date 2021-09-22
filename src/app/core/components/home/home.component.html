@@ -1,1 +1,12 @@
-<p>home works!</p>
+<i class="fas fa-pepper-hot text-primary-dark"></i>
+<ng-container *ngIf="users$ | async; let users">
+  <div
+    *ngFor="let user of users"
+    class="border-b-2 border-solid border-blue-600 py-2"
+  >
+    <div class="text-xs text-primary-default">
+      First Name: {{ user.firstName }}
+    </div>
+    <div class="text-xs text-purple-600">Last Name: {{ user.lastName }}</div>
+  </div>
+</ng-container>
