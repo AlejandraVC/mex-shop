@@ -1,38 +1,38 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CartComponent } from './core/components/cart/cart.component';
-import { CheckoutComponent } from './core/components/checkout/checkout.component';
 import { HomeComponent } from './core/components/home/home.component';
-import { LoginComponent } from './user/components/login/login.component';
-import { OrderSuccessComponent } from './core/components/order-success/order-success.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
-import { ProductsComponent } from './core/components/products/products.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'cart', component: CartComponent },
-  { path: 'checkout', component: CheckoutComponent },
-  { path: 'products', component: ProductsComponent },
-  { path: 'checkout', component: CheckoutComponent },
-  { path: 'order-success', component: OrderSuccessComponent },
-  { path: 'login', component: LoginComponent },
 
+  {
+    path: 'account',
+    // canLoad: [AuthGuard],
+    loadChildren: () =>
+      import('./account/account.module').then((module) => module.AccountModule),
+  },
   {
     path: 'admin',
     loadChildren: () =>
-      import('./admin/admin.module').then((m) => m.AdminModule),
+      import('./admin/admin.module').then((module) => module.AdminModule),
   },
   {
     path: 'user',
-    loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
+    loadChildren: () =>
+      import('./user/user.module').then((module) => module.UserModule),
   },
-
   { path: '**', component: PageNotFoundComponent }, // Wildcard route for a 404 page
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      initialNavigation: 'enabled',
+      scrollPositionRestoration: 'top',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

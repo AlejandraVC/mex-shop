@@ -10,32 +10,19 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { AccountModule } from './account/account.module';
 import { AdminModule } from './admin/admin.module';
 import { FooterModule } from './core/modules/footer/footer.module';
 import { HeaderModule } from './core/modules/header/header.module';
 import { UserModule } from './user/user.module';
 
-import { CartComponent } from './core/components/cart/cart.component';
-import { CheckoutComponent } from './core/components/checkout/checkout.component';
 import { HomeComponent } from './core/components/home/home.component';
-import { LoginComponent } from './user/components/login/login.component';
-import { OrderSuccessComponent } from './core/components/order-success/order-success.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
-import { ProductsComponent } from './core/components/products/products.component';
 
 import { FirestoreService } from './core/services/firestore.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CartComponent,
-    CheckoutComponent,
-    HomeComponent,
-    LoginComponent,
-    OrderSuccessComponent,
-    PageNotFoundComponent,
-    ProductsComponent,
-  ],
+  declarations: [AppComponent, HomeComponent, PageNotFoundComponent],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
@@ -45,6 +32,7 @@ import { FirestoreService } from './core/services/firestore.service';
     AppRoutingModule,
     BrowserModule,
 
+    AccountModule,
     AdminModule,
     FooterModule,
     HeaderModule,

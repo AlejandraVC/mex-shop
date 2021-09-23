@@ -1,18 +1,38 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { UserAccountComponent } from './components/user-account/user-account.component';
-import { UserOrdersComponent } from './components/user-orders/user-orders.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
-const routes: Routes = [
-  { path: 'account', component: UserAccountComponent },
-  { path: 'orders', component: UserOrdersComponent },
+const userRoutes: Routes = [
+  {
+    path: 'login',
+    pathMatch: 'full',
+    component: LoginComponent,
+  },
+  {
+    path: 'register',
+    pathMatch: 'full',
+    component: RegisterComponent,
+  },
+  {
+    path: 'forgot-password',
+    pathMatch: 'full',
+    component: ForgotPasswordComponent,
+  },
+  {
+    path: 'reset-password',
+    pathMatch: 'full',
+    redirectTo: '/404',
+  },
+  {
+    path: 'reset-password/:uuid',
+    pathMatch: 'full',
+    component: ResetPasswordComponent,
+  },
 ];
 
-export const user = RouterModule.forChild(routes);
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
-})
-export class UserRoutingModule {}
+export const UserRoutingModule: ModuleWithProviders<RouterModule> =
+  RouterModule.forChild(userRoutes);
