@@ -1,10 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { OrderComponent } from './components/order/order.component';
-import { OverviewComponent } from './components/overview/overview.component';
+
+import { AccountComponent } from './account.component';
+import { AccountOrderComponent } from './components/account-order/account-order.component';
+import { AccountOverviewComponent } from './components/account-overview/account-overview.component';
+import { AccountRoutingModule } from './account.routing';
 
 @NgModule({
-  declarations: [OrderComponent, OverviewComponent],
-  imports: [CommonModule],
+  declarations: [
+    AccountComponent,
+    AccountOrderComponent,
+    AccountOverviewComponent,
+  ],
+  imports: [CommonModule, AccountRoutingModule],
 })
 export class AccountModule {}

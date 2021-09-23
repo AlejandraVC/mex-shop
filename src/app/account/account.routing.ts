@@ -6,12 +6,12 @@ import { AccountOrderComponent } from './components/account-order/account-order.
 import { AccountOrdersComponent } from './components/account-orders/account-orders.component';
 import { AccountOverviewComponent } from './components/account-overview/account-overview.component';
 
-//import { AuthGuard } from './guards/auth.guard';
+// import { AuthGuard } from './guards/auth.guard';
 
 export const accountRoutes: Routes = [
   {
     path: '',
-    //canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     component: AccountComponent,
     children: [
       {

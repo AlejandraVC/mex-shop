@@ -20,6 +20,6 @@ import { UserService } from './services/user.service';
   imports: [CommonModule, ReactiveFormsModule, RouterModule, UserRoutingModule],
   providers: [UserService],
 
-  //imports: [FormComponentsModule, UserAuthenticationModalModule],
+  // imports: [FormComponentsModule, UserAuthenticationModalModule],
 })
 export class UserModule {}
