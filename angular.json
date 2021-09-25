@@ -44,7 +44,8 @@
             "aot": true,
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "localize": true
           },
           "configurations": {
             "production": {
@@ -75,12 +76,10 @@
               ]
             },
             "en": {
-              "locales": "src/i18n/messages.en.xlf",
-              "localize": "en"
+              "localize": ["en"]
             },
             "es": {
-              "locales": "src/i18n/messages.es.xlf",
-              "localize": "es"
+              "localize": ["es"]
             }
           }
         },
