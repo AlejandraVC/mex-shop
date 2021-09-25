@@ -7,7 +7,30 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderLanguageSelectionComponent implements OnInit {
-  constructor() {}
+  public siteLanguage = 'en';
 
-  ngOnInit(): void {}
+  public languageList = [
+    { code: 'en', label: 'English' },
+    { code: 'es', label: 'Español' },
+  ];
+
+  constructor() {}
+  ngOnInit(): void {
+    this.getSiteLanguage();
+  }
+
+  /**
+   *
+   * @returns Site Language string
+   */
+  public getSiteLanguage(): string {
+    const locale = window.location.pathname.split('/')[1];
+
+    switch (locale) {
+      case 'es':
+        return (this.siteLanguage = 'es');
+      default:
+        return (this.siteLanguage = 'en');
+    }
+  }
 }

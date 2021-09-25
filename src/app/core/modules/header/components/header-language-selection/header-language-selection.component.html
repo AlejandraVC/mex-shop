@@ -1,4 +1,8 @@
-<a href="/es" class="flex items-center cursor-pointer">
+<a
+  *ngIf="siteLanguage === 'en'"
+  href="/es"
+  class="flex items-center cursor-pointer"
+>
   <span class="text-2xs align-middle uppercase">ES</span>
   <!-- UPDATE title -->
   <img
@@ -10,7 +14,11 @@
   />
 </a>
 
-<a href="/en" class="flex items-center cursor-pointer">
+<a
+  *ngIf="siteLanguage === 'es'"
+  href="/en"
+  class="flex items-center cursor-pointer"
+>
   <span class="text-2xs align-middle uppercase">EN</span>
   <!-- UPDATE title -->
   <img
