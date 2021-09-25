@@ -36,7 +36,12 @@
       class="hidden md:flex items-center cursor-pointer"
     >
       <p class="hidden sm:block text-2xs align-middle uppercase">
-        Hello
+        <span
+          i18n="
+            Greeting text in the website header right next to the users
+            name@@header-hello-user"
+          >Hello</span
+        >
         <span class="text-primary-light">{{ userName$ | async }}</span>
       </p>
       <!-- UPDATE title -->

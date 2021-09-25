@@ -10,7 +10,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "stats": "webpack-bundle-analyzer dist/mex-shop/stats.json"
+    "stats": "webpack-bundle-analyzer dist/mex-shop/stats.json",
+    "i18n": "ng extract-i18n mex-shop --format xlf --output-path src/i18n && ng run mex-shop:xliffmerge",
+    "start:es": "ng serve --configuration=es --port 4223"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +25,7 @@
     "@angular/platform-browser": "~11.1.1",
     "@angular/platform-browser-dynamic": "~11.1.1",
     "@angular/router": "~11.1.1",
+    "@ngx-i18nsupport/tooling": "^8.0.3",
     "@tailwindcss/forms": "^0.2.1",
     "firebase": "^8.3.1",
     "firebase-tools": "^9.3.0",

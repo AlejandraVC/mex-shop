@@ -18,7 +18,19 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "ms",
+      "i18n": {
+        "locales": {
+          "en": {
+            "translation": "src/i18n/messages.en.xlf",
+            "baseHref": "/en/"
+          },
+          "es": {
+            "translation": "src/i18n/messages.es.xlf",
+            "baseHref": "/es/"
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "ngx-build-plus:browser",
@@ -61,6 +73,14 @@
                   "maximumError": "4kb"
                 }
               ]
+            },
+            "en": {
+              "locales": "src/i18n/messages.en.xlf",
+              "localize": "en"
+            },
+            "es": {
+              "locales": "src/i18n/messages.es.xlf",
+              "localize": "es"
             }
           }
         },
@@ -73,6 +93,12 @@
           "configurations": {
             "production": {
               "browserTarget": "mex-shop:build:production"
+            },
+            "en": {
+              "browserTarget": "mex-shop:build:en"
+            },
+            "es": {
+              "browserTarget": "mex-shop:build:es"
             }
           }
         },
@@ -93,6 +119,18 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.scss"],
             "scripts": []
+          }
+        },
+        "xliffmerge": {
+          "builder": "@ngx-i18nsupport/tooling:xliffmerge",
+          "options": {
+            "xliffmergeOptions": {
+              "i18nFormat": "xlf",
+              "srcDir": "src/i18n",
+              "genDir": "src/i18n",
+              "defaultLanguage": "en",
+              "languages": ["en", "es"]
+            }
           }
         },
         "lint": {
