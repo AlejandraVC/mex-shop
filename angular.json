@@ -120,6 +120,17 @@
             "scripts": []
           }
         },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "mex-shop:build:production",
+            "serverTarget": "mex-shop:server:production",
+            "routes": ["/"]
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
         "xliffmerge": {
           "builder": "@ngx-i18nsupport/tooling:xliffmerge",
           "options": {

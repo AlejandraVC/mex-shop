@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4223",
+    "start": "ng serve --configuration=en --port 4223",
     "build": "ng build --prod --aot",
     "build:prod": "NODE_ENV=production ng build --prod --aot",
     "build:stats": "ng build --stats-json",
