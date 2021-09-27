@@ -1,0 +1,65 @@
+<header class="w-fullflex flex-col cursor-default">
+  <!-- Meta Navigation -->
+  <nav class="h-12 bg-secondary text-white">
+    <div class="max-w-7xl mx-auto flex px-2 sm:px-6 lg:px-8 py-2">
+      <div class="w-1/4 lg:w-1/2 flex items-center">
+        <ms-header-language-selection></ms-header-language-selection>
+      </div>
+      <div class="flex w-1/2 justify-center items-center">
+        <a routerLink="/" class="flex">
+          <img
+            src="../assets/ms-logo.png"
+            class="h-8 pr-2"
+            loading="lazy"
+            alt="MexShop"
+            title="MexShop"
+          />
+          <span
+            class="
+              text-xl
+              sm:text-2xl
+              pt-1
+              sm:pt-0
+              align-middle
+              font-extralight
+            "
+            >MexShop</span
+          >
+        </a>
+      </div>
+      <div class="w-1/4 lg:w-1/2 flex justify-end">
+        <ms-header-user-account></ms-header-user-account>
+        <a routerLink="/cart" class="cursor-pointer ml-2 text-2xl align-middle">
+          <!-- UPDATE title -->
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+        <!-- <a routerLink="/cart" class="cursor-pointer">  -->
+        <!-- UPDATE title -->
+        <!--  <img
+            src="../assets/img/icons/shopping-cart.png"
+            class="h-8 ml-2"
+            loading="lazy"
+            alt="Shopping Cart"
+            title="Shopping Cart"
+          /> -->
+        <!--  </a> -->
+      </div>
+    </div>
+  </nav>
+
+  <!-- Logo -->
+  <!--  <div class="hidden lg:flex w-full py-3 items-center justify-center mx-auto">
+    <a routerLink="/" class="flex items-center cursor-pointer">
+      <img
+        src="../assets/ms-logo.png"
+        class="h-10 pr-2"
+        loading="lazy"
+        alt="MexShop"
+        title="MexShop"
+      />
+      <span class="text-2xl font-extralight">MexShop</span>
+    </a>
+  </div> -->
+  <!-- Main Navigation goes here -->
+  <ms-header-navigation></ms-header-navigation>
+</header>

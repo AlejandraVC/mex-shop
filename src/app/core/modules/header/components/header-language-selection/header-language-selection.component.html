@@ -1,0 +1,31 @@
+<a
+  *ngIf="siteLanguage === 'en'"
+  href="/es"
+  class="flex items-center cursor-pointer"
+>
+  <span class="text-2xs align-middle uppercase">ES</span>
+  <!-- UPDATE title -->
+  <img
+    src="../assets/img/icons/mexican-flag.png"
+    class="h-6 pl-2"
+    loading="lazy"
+    alt="Español"
+    title="Mexican flag"
+  />
+</a>
+
+<a
+  *ngIf="siteLanguage === 'es'"
+  href="/en"
+  class="flex items-center cursor-pointer"
+>
+  <span class="text-2xs align-middle uppercase">EN</span>
+  <!-- UPDATE title -->
+  <img
+    src="../assets/img/icons/eu-flag.png"
+    class="h-6 pl-2"
+    loading="lazy"
+    alt="English"
+    title="European Union flag"
+  />
+</a>

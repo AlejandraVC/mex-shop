@@ -1,0 +1,73 @@
+/* purgecss start ignore */
+
+//////////////////////////////
+// KEYFRAME ANIMATIONS
+//////////////////////////////
+
+@keyframes moveLeftToRight {
+  0% {
+    transform: translateX(-100%);
+    z-index: 2;
+  }
+  99.99% {
+    transform: translateX(125%);
+    z-index: 2;
+  }
+  100% {
+    transform: translateX(-100%);
+    z-index: -1;
+  }
+}
+.content-placeholder {
+  @apply bg-gray-800;
+  @apply text-gray-800;
+  @apply overflow-hidden;
+  @apply relative;
+  z-index: 1;
+
+  &::before {
+    @apply opacity-75;
+    @apply absolute;
+    @apply inset-y-0;
+    @apply w-full;
+    content: '';
+    animation: moveLeftToRight 1s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    background: linear-gradient(
+      to right,
+      currentColor,
+      theme('colors.gray.800'),
+      currentColor
+    );
+  }
+}
+
+//////////////////////////////
+// TRANSITIONS
+// ¯¯¯¯¯¯¯¯¯¯¯
+// Transitions are used
+// EITHER
+// to animate a property change when highlighting an element
+// OR
+// when additional content is revealed on user interaction.
+//
+// These two types of transitions have the same easing but different durations:
+// `100ms` for highlighting and
+// `200ms` for revealing content.
+//
+// Usage:
+// ```
+//   <span class="opacity-75 hover:opacity-100 transition-opacity transition-highlight">Menu item</span>
+// ```
+//////////////////////////////
+.transition-highlight,
+.transition-reveal {
+  @apply ease-out;
+}
+.transition-highlight {
+  @apply duration-100;
+}
+.transition-reveal {
+  @apply duration-200;
+}
+
+/* purgecss end ignore */

@@ -1,0 +1,174 @@
+<!-- AUTHENTICATED USER -->
+<ng-container
+  *ngIf="
+    isAuthenticated$ | async as isAuthenticated;
+    else notAuthenticatedContent
+  "
+>
+  <!--
+  Small and medium view
+  viewports < 1279px
+-->
+  <a routerLink="/" class="flex md:hidden items-center cursor-pointer">
+    <!-- UPDATE title -->
+    <img
+      [src]="
+        isAdmin
+          ? '../assets/img/icons/wrestling.png'
+          : '../assets/img/icons/mexican-man.png'
+      "
+      class="h-8 ml-2"
+      loading="lazy"
+      alt="User Icon"
+      title="User Icon"
+    />
+  </a>
+
+  <!--
+  Desktop view
+  viewports > 1280px
+  ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+-->
+  <div class="relative">
+    <div
+      (click)="toggleFlyout()"
+      class="hidden md:flex items-center cursor-pointer"
+    >
+      <p class="hidden sm:block text-2xs align-middle uppercase">
+        <span
+          i18n="
+            Greeting text in the website header right next to the users
+            name@@header-hello-user"
+          >Hello</span
+        >
+        <span class="text-primary-light pl-1">{{ userName$ | async }}</span>
+      </p>
+      <!-- UPDATE title -->
+      <img
+        [src]="
+          isAdmin
+            ? '../assets/img/icons/wrestling.png'
+            : '../assets/img/icons/mexican-man.png'
+        "
+        class="h-8 ml-2"
+        loading="lazy"
+        alt="User Icon"
+        title="User Icon"
+      />
+    </div>
+
+    <!-- PROFILE DROPDOWN -->
+    <nav
+      (mouseleave)="closeFlyout()"
+      [ngClass]="isDisplayed ? 'opacity-100 z-10' : 'opacity-0 -z-10'"
+      class="
+        user-flyout
+        absolute
+        hidden
+        md:flex
+        flex-col
+        justify-center
+        origin-top-right
+        right-0
+        py-1
+        w-40
+        font-light
+        text-left
+        border-2 border-solid border-primary-default
+        rounded-md
+        shadow-xl
+      "
+      role="menu"
+      aria-orientation="vertical"
+      aria-labelledby="user-menu"
+    >
+      <!-- ADMIN PROFILE DROPDOWN -->
+      <ng-container *ngIf="isAdmin; else userProfileDropdown">
+        <a
+          href="#"
+          class="
+            px-4
+            py-2
+            mt-4
+            mx-auto
+            text-sm text-secondary
+            hover:text-primary-default
+            uppercase
+          "
+          role="menuitem"
+          >Products</a
+        >
+        <a
+          href="#"
+          class="
+            px-4
+            py-2
+            mx-auto
+            text-sm text-secondary
+            hover:text-primary-default
+            uppercase
+          "
+          role="menuitem"
+          >Orders</a
+        >
+      </ng-container>
+
+      <!-- USER PROFILE DROPDOWN -->
+      <ng-template #userProfileDropdown>
+        <a
+          href="#"
+          class="
+            px-4
+            py-2
+            mt-4
+            text-sm text-secondary
+            hover:text-primary-default
+            uppercase
+          "
+          role="menuitem"
+          >My Profile</a
+        >
+        <a
+          href="#"
+          class="
+            px-4
+            py-2
+            text-sm text-secondary
+            hover:text-primary-default
+            uppercase
+          "
+          role="menuitem"
+          >My Orders</a
+        >
+      </ng-template>
+      <button
+        (click)="onSignOut()"
+        class="
+          w-2/3
+          mx-auto
+          px-4
+          py-2
+          my-4
+          text-sm text-white
+          rounded-md
+          bg-secondary
+          hover:bg-opacity-60
+        "
+      >
+        Sign Out
+      </button>
+    </nav>
+  </div>
+</ng-container>
+
+<!-- NOT AUTHENTICATED USER -->
+
+<ng-template #notAuthenticatedContent>
+  <a
+    routerLink="/user/login"
+    class="pt-1 flex items-center content-center cursor-pointer"
+  >
+    <span class="hidden sm:block text-2xs align-middle uppercase">Log In</span>
+    <i class="fas fa-user ml-2 text-2xl"></i>
+  </a>
+</ng-template>
